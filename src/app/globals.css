@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.awkward-cursor {
+  cursor: url('/cursor-awkward.png'), auto !important;
+}
