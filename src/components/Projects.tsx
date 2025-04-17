@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa';
 import cryptohubImage from '../assets/crypto1.png';
 import blogpenImage from '../assets/blogpen1.png';
 import meditationappImge from '../assets/meditationapp1.png';
+import noter from "../assets/noter.png"
 
 export default function Projects() {
     const ref = useRef<HTMLDivElement>(null);
@@ -15,11 +16,19 @@ export default function Projects() {
 
     const projects = [
         {
+            title: "Noter",
+            description: "Noter is a centralized platform to share, explore, and organize study material with features like a nested folder structure, multi-level access controls, and an explore section for discovering published content. Users can bookmark notes, collaborate easily, and benefit from upcoming AI-powered tools such as smart search, summaries, and personalized recommendations. Designed for students, educators, and lifelong learners.",
+            image: noter,
+            tech: ["React.js", "Node.js", "MongoDB", "Tailwind CSS", "AI (coming soon)"],
+            demoLink: "https://noter.jayvaliya.me",
+            codeLink: "https://github.com/jayvaliya/noter"
+        },
+        {
             title: "Cryptohub",
             description: "Crypto Hub is a dashboard that provides real-time cryptocurrency market insights, including price tracking, trend analysis, and interactive data visualization to help users stay updated with market movements. 🚀",
             image: cryptohubImage,
             tech: ["React.js", "Tailwind CSS", "ApexCharts.js", "CoinGecko API"],
-            demoLink: "https://cryptoxhub.netlify.app/",
+            demoLink: "https://cryptohub.jayvaliya.me",
             codeLink: "https://github.com/jayvaliya/crypto-hub"
         },
         {
@@ -27,7 +36,7 @@ export default function Projects() {
             description: "BlogPen is a platform for writers to create, share, and explore blogs effortlessly. It offers a seamless writing experience with an intuitive interface, allowing users to engage with a wide range of content. 🚀",
             image: blogpenImage,
             tech: ["React", "Tailwind CSS", "PostgreSQL", "Prisma", "CloudFlare Workers"],
-            demoLink: "https://blogpenn.netlify.app/",
+            demoLink: "https://blogpen.jayvaliya.me/",
             codeLink: "https://github.com/jayvaliya/medium"
         },
         {
@@ -51,7 +60,7 @@ export default function Projects() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section heading */}
                 <div className="flex flex-col items-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent mb-4">My Projects</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent mb-4">My Work</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
                 </div>
 
