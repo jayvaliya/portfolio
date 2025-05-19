@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
     variable: '--font-space-grotesk',
 });
 
-const roles = ["Fullstack Developer", "Software Engineer", "Mobile App Developer"];
+const roles = ["Fullstack Developer", "Software Engineer", "Mobile App Developer", "", "Problem Solver"];
 
 export default function Hero() {
     const [currentRole, setCurrentRole] = useState("");
@@ -102,13 +102,11 @@ export default function Hero() {
                 {/* Text content - pushed to left side */}
                 <div className={`${spaceGrotesk.variable} lg:max-w-xl py-12 lg:py-0`}>
                     <div className="relative inline-block">
-                        <h1 className="font-space-grotesk text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-400 bg-clip-text text-transparent tracking-tight mb-0 hover:scale-105 transition-transform duration-300">
-                            Hello World
+                        <h1 className="font-space-grotesk text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-400 bg-clip-text text-transparent tracking-tight mb-0 hover:scale-105 transition-transform duration-300">
+                            {"Hello World"}
                         </h1>
                         <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/20 via-fuchsia-500/20 to-indigo-600/20 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-pulse"></div>
-                    </div>
-
-                    <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-medium mt-3 mb-8 opacity-90 transition-all duration-300 hover:tracking-wide">
+                    </div>                    <h2 className="font-sans text-2xl sm:text-4xl md:text-8xl font-bold mt-3 mb-8 opacity-90 transition-all duration-300 hover:tracking-wide whitespace-nowrap">
                         I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">Jay Valiya</span>
                     </h2>
 
@@ -124,16 +122,24 @@ export default function Hero() {
                         </span>
                     </div>
 
-                    <div className="mt-12 opacity-70 hover:opacity-100 transition-opacity duration-300 lg:hidden">
-                        <svg
-                            className="w-6 h-6 mx-auto animate-bounce"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
+                    <div className="mt-8 space-y-4 max-w-lg">
+                        <p className="text-gray-300 text-lg">
+                            A passionate developer creating intuitive, scalable solutions for web and mobile platforms.
+                        </p>
+                        <div className="flex flex-wrap gap-4 mt-6">
+                            <a
+                                href="#contact"
+                                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg text-white font-medium hover:from-purple-600 hover:to-indigo-600 transition-all shadow-lg shadow-purple-500/20"
+                            >
+                                Get In Touch
+                            </a>
+                            <a
+                                href="#projects"
+                                className="px-6 py-3 border border-purple-500/20 rounded-lg text-white font-medium hover:bg-white/5 transition-all"
+                            >
+                                View My Work
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -176,7 +182,7 @@ export default function Hero() {
             </div>
 
             {/* Arrow for desktop */}
-            <div className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-70 hover:opacity-100 transition-opacity duration-300">
+            {/* <div className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-70 hover:opacity-100 transition-opacity duration-300">
                 <svg
                     className="w-6 h-6 mx-auto animate-bounce"
                     fill="none"
@@ -186,7 +192,7 @@ export default function Hero() {
                 >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-            </div>
+            </div> */}
         </div>
     );
 }

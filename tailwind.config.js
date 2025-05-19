@@ -23,6 +23,11 @@ module.exports = {
         'float-slow2': 'float 18s ease-in-out infinite reverse',
         'float-slow3': 'float 20s ease-in-out infinite 2s',
         'gradient-pulse': 'gradient-pulse 5s ease infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'bounce-slow': 'bounce 3s infinite',
+        'fade-in': 'fadeIn 1s ease-in-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-right': 'slideRight 0.5s ease-out',
       },
       keyframes: {
         float: {
@@ -32,6 +37,18 @@ module.exports = {
         'gradient-pulse': {
           '0%, 100%': { opacity: '0.1' },
           '50%': { opacity: '0.25' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideRight: {
+          '0%': { transform: 'translateX(-20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
         },
       },
     },

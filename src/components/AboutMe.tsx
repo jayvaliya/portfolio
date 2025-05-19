@@ -112,9 +112,11 @@ export default function AboutMe() {
                         transition={{ duration: 0.7, delay: 0.1 }}
                     >
                         {/* Paragraph content remains the same */}
-                        <div className="prose prose-invert max-w-none">
+                        <div className="prose prose-invert max-w-none">                            <p className="text-xl leading-relaxed text-gray-200 mb-6">
+                            I{`'`}m a <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">passionate developer</span> who builds scalable web and mobile applications. I transform complex problems into <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">elegant solutions</span> through clean, efficient code that delivers <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">exceptional user experiences</span>.
+                        </p>
                             <p className="text-xl leading-relaxed text-gray-200 mb-6">
-                                I{`'`}m a <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">passionate developer</span> who builds scalable web and mobile applications. I transform complex problems into <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">elegant solutions</span> through clean, efficient code that delivers <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">exceptional user experiences</span>.
+                                My journey began with a fascination for creating digital solutions that make life easier. Over the years, I've honed my skills in <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">full-stack development</span>, focusing on React, Node.js, and modern web technologies.
                             </p>
                             <p className="text-xl leading-relaxed text-gray-200">
                                 Beyond coding, I{`'`}m devoted to <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">continuous learning</span> and staying <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">adaptable</span> with emerging technologies. My <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">curiosity</span> drives me to explore new tech and contribute to open-source when I{`'`}m not spending time with my cats.

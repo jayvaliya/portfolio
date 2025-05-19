@@ -3,3 +3,22 @@
 .awkward-cursor {
   cursor: url('/cursor-awkward.png'), auto !important;
 }
+
+/* Custom cursor styles */
+html {
+  cursor: none !important;
+}
+
+html.cursor-text {
+  cursor: text !important;
+}
+
+html.cursor-pointer {
+  cursor: pointer !important;
+}
+
+@media (max-width: 768px) {
+  html {
+    cursor: auto !important;
+  }
+}
