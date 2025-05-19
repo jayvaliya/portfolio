@@ -149,14 +149,15 @@ export default function Projects() {
                                         whileHover={{ scale: 1.08 }}
                                         transition={{ duration: 0.8 }}
                                         className="h-full w-full"
-                                    >
-                                        <Image
+                                    >                                        <Image
                                             src={project.image}
-                                            alt={project.title}
+                                            alt={`${project.title} - Project Screenshot`}
                                             fill
                                             className="object-cover"
                                             sizes="(max-width: 768px) 100vw, 50vw"
-                                            priority
+                                            priority={index === 0} // Only prioritize first project
+                                            loading={index === 0 ? "eager" : "lazy"}
+                                            quality={85}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a12]/90 via-transparent to-transparent"></div>
                                     </motion.div>
