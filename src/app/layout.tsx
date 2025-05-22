@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jay Valiya | Full Stack Developer & Software Engineer",
+  title: "Jay Valiya | Portfolio",
   description: "Portfolio of Jay Valiya, a passionate Full Stack Developer specializing in React, Node.js, and modern web technologies. Explore my projects and skills.",
   keywords: "Jay Valiya, Full Stack Developer, Software Engineer, React Developer, Node.js, JavaScript, Web Development, Portfolio, Frontend Developer, Backend Developer",
   authors: [{ name: "Jay Valiya" }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jay Valiya | Full Stack Developer",
+    title: "Jay Valiya | Portfolio",
     description: "Full Stack Developer specializing in React, Node.js, and modern web technologies.",
     url: "https://jayvaliya.me",
     siteName: "Jay Valiya Portfolio",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: "https://jayvaliya.me/api/og",
         width: 1200,
         height: 630,
-        alt: "Jay Valiya - Full Stack Developer",
+        alt: "Jay Valiya - Portfolio",
       },
     ],
     locale: "en_US",

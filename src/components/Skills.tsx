@@ -75,32 +75,30 @@ export default function Skills() {
                 <p className="text-gray-300 text-center max-w-2xl mt-6 text-lg">
                     Technologies I use to bring ideas to life
                 </p>
-            </div>
-
-            {/* Skills grid */}
-            <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>            {/* Skills grid */}
+            <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {skillCategories.map((category, index) => (<motion.div
                     key={index}
-                    className="group bg-gradient-to-br from-purple-900/20 to-indigo-900/20 rounded-xl border border-white/10 backdrop-blur-sm p-6 hover:shadow-lg hover:shadow-purple-500/10 hover:border-purple-500/30 transition-all duration-500"
+                    className="group bg-gradient-to-br from-purple-900/20 to-indigo-900/20 rounded-xl border border-white/10 backdrop-blur-sm p-4 md:p-6 hover:shadow-lg hover:shadow-purple-500/10 hover:border-purple-500/30 transition-all duration-500"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.5, delay: 0.1 + (index * 0.1) }}
                 >
-                    <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/30 to-indigo-500/30 flex items-center justify-center text-white mr-4 group-hover:from-purple-500/50 group-hover:to-indigo-500/50 transition-all duration-500">
+                    <div className="flex items-center mb-4 md:mb-6">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-purple-500/30 to-indigo-500/30 flex items-center justify-center text-white mr-3 md:mr-4 group-hover:from-purple-500/50 group-hover:to-indigo-500/50 transition-all duration-500">
                             {category.icon}
                         </div>
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent">{category.name}</h3></div>                            <div className="grid grid-cols-3 gap-4">
+                        <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent">{category.name}</h3></div>                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
                         {category.skills.map((skill, skillIndex) => (
                             <motion.div
                                 key={skillIndex}
-                                className="flex flex-col items-center justify-center p-4 rounded-lg bg-gray-800/40 hover:bg-purple-900/20 transition-all duration-300 group"
+                                className="flex flex-col items-center justify-center p-3 md:p-4 rounded-lg bg-gray-800/40 hover:bg-purple-900/20 transition-all duration-300 group min-h-[80px]"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3, delay: 0.2 + (skillIndex * 0.1) }}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="text-3xl text-gray-300 group-hover:text-white mb-3 transition-all duration-300">{skill.icon}</div>
+                                <div className="text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-2 md:mb-3 transition-all duration-300">{skill.icon}</div>
                                 <span className="text-xs text-gray-400 group-hover:text-gray-200 text-center transition-all duration-300">{skill.name}</span>
                             </motion.div>
                         ))}

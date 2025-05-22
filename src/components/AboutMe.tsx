@@ -97,34 +97,31 @@ export default function AboutMe() {
             </AnimatePresence>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Section heading */}
-                <div className="flex flex-col items-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent mb-4">About Me</h2>
+                {/* Section heading */}                <div className="flex flex-col items-center mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent mb-4">About Me</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
                 </div>
 
-                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                    {/* Left column - paragraph (unchanged) */}
+                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
+                    {/* Left column - paragraph (optimized for mobile) */}
                     <motion.div
                         className="lg:col-span-3"
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
                     >
-                        {/* Paragraph content remains the same */}
-                        <div className="prose prose-invert max-w-none">                            <p className="text-xl leading-relaxed text-gray-200 mb-6">
+                        {/* Paragraph content remains the same but with mobile-optimized text sizes */}
+                        <div className="prose prose-invert max-w-none">                            <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-6">
                             I{`'`}m a <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">passionate developer</span> who builds scalable web and mobile applications. I transform complex problems into <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">elegant solutions</span> through clean, efficient code that delivers <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">exceptional user experiences</span>.
                         </p>
-                            <p className="text-xl leading-relaxed text-gray-200 mb-6">
+                            <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-6">
                                 My journey began with a fascination for creating digital solutions that make life easier. Over the years, I've honed my skills in <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">full-stack development</span>, focusing on React, Node.js, and modern web technologies.
                             </p>
-                            <p className="text-xl leading-relaxed text-gray-200">
+                            <p className="text-lg md:text-xl leading-relaxed text-gray-200">
                                 Beyond coding, I{`'`}m devoted to <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">continuous learning</span> and staying <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">adaptable</span> with emerging technologies. My <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-400">curiosity</span> drives me to explore new tech and contribute to open-source when I{`'`}m not spending time with my cats.
                             </p>
                         </div>
-                    </motion.div>
-
-                    {/* Right column - bullet points with enhanced hover */}
+                    </motion.div>                    {/* Right column - bullet points with enhanced hover */}
                     <motion.div
                         className="lg:col-span-2"
                         initial={{ opacity: 0, y: 30 }}
@@ -135,7 +132,7 @@ export default function AboutMe() {
                             {skillItems.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    className="group relative bg-gradient-to-br from-purple-900/20 to-indigo-900/20 p-4 rounded-lg backdrop-blur-sm border border-white/5 hover:border-purple-500/20 transition-all duration-300"
+                                    className="group relative bg-gradient-to-br from-purple-900/20 to-indigo-900/20 p-4 rounded-lg backdrop-blur-sm border border-white/5 hover:border-purple-500/20 transition-all duration-300 touch-manipulation"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                     transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
@@ -145,12 +142,21 @@ export default function AboutMe() {
                                     }}
                                     onMouseEnter={() => setHoveredItem(index)}
                                     onMouseLeave={() => setHoveredItem(null)}
-                                    style={{ cursor: 'none' }}
+                                    style={{ cursor: 'default' }}
+                                    onTouchStart={() => {
+                                        // Disable hover effect on touch devices
+                                        if (window.innerWidth <= 768) return;
+                                        setHoveredItem(index);
+                                    }}
+                                    onTouchEnd={() => {
+                                        if (window.innerWidth <= 768) return;
+                                        setHoveredItem(null);
+                                    }}
                                 >
                                     <div className="flex items-center space-x-3">
                                         <span className="text-2xl">{item.icon}</span>
                                         <div>
-                                            <span className="font-mono text-white text-lg font-medium">{item.label}</span>
+                                            <span className="font-mono text-white text-base md:text-lg font-medium">{item.label}</span>
                                             <p className="text-sm text-gray-400 mt-1">{item.description}</p>
                                         </div>
                                     </div>

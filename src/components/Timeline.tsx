@@ -62,40 +62,47 @@ export default function Timeline() {
                     <p className="text-gray-300 text-center max-w-2xl mt-6 text-lg">
                         The path that brought me here and continues to shape my growth as a developer
                     </p>
-                </div>
-
-                {/* Timeline */}
+                </div>                {/* Timeline */}
                 <div ref={ref} className="relative">
-                    {/* Vertical line */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-500/30 via-indigo-500/30 to-purple-500/30 rounded-full"></div>
+                    {/* Vertical line - hidden on mobile, visible on md screens and up */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-500/30 via-indigo-500/30 to-purple-500/30 rounded-full hidden md:block"></div>
 
                     <div className="space-y-16">
                         {timelineItems.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+                                className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center md:items-start`}
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                                 transition={{ duration: 0.6, delay: 0.1 + (index * 0.1) }}
-                            >
-                                {/* Content */}
-                                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
+                            >                                {/* Content */}
+                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'} text-left`}>
                                     <div className="bg-gradient-to-br from-purple-900/30 to-indigo-900/30 p-6 rounded-xl border border-white/10 backdrop-blur-sm shadow-lg hover:shadow-purple-500/10 transform hover:-translate-y-1 transition-all duration-300">
-                                        <span className="text-sm md:text-lg font-mono bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">
+                                        {/* Mobile only icon - shown inline at the top of the card */}
+                                        <div className="flex md:hidden items-center mb-3">
+                                            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 mr-3">
+                                                {item.icon}
+                                            </div>
+                                            <span className="text-sm font-mono bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">
+                                                {item.year}
+                                            </span>
+                                        </div>
+
+                                        {/* Desktop only year - hidden on mobile */}
+                                        <span className="hidden md:inline text-lg font-mono bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">
                                             {item.year}
                                         </span>
+
                                         <h3 className="text-xl md:text-2xl font-bold text-white mt-1 mb-3">{item.title}</h3>
                                         <p className="text-gray-300">{item.description}</p>
                                     </div>
                                 </div>
 
-                                {/* Icon bubble */}
-                                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center z-10 shadow-lg shadow-purple-500/20">
+                                {/* Icon bubble - only visible on desktop */}
+                                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 items-center justify-center z-10 shadow-lg shadow-purple-500/20 hidden md:flex">
                                     {item.icon}
-                                </div>
-
-                                {/* Empty space for the other half */}
-                                <div className="w-1/2"></div>
+                                </div>                                {/* Empty space for the other half - only on desktop */}
+                                <div className="hidden md:block md:w-1/2"></div>
                             </motion.div>
                         ))}
                     </div>

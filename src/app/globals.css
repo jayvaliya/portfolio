@@ -21,4 +21,26 @@ html.cursor-pointer {
   html {
     cursor: auto !important;
   }
+
+  /* Better touch targets for mobile */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase font size for better readability on mobile */
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Improve form elements for touch */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    /* Prevents iOS zoom on focus */
+  }
 }

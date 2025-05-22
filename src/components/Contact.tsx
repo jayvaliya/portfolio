@@ -138,12 +138,11 @@ export default function Contact() {
         } finally {
             setIsSubmitting(false);
         }
-    };
-    */const socialLinks = [
-        { name: 'Email', icon: <FaEnvelope className="w-5 h-5" />, href: 'mailto:valiyajay555@gmail.com', isEmail: true },
+    };    */
+    const socialLinks = [
         { name: 'GitHub', icon: <FaGithub className="w-5 h-5" />, href: 'https://github.com/jayvaliya', rel: 'noopener noreferrer' },
         { name: 'LinkedIn', icon: <FaLinkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/jay-valiya', rel: 'noopener noreferrer' },
-        { name: 'Twitter', icon: <FaTwitter className="w-5 h-5" />, href: 'https://twitter.com/jayvaliya09', rel: 'noopener noreferrer' }
+        { name: 'Twitter', icon: <FaTwitter className="w-5 h-5" />, href: 'https://x.com/jayvaliya09', rel: 'noopener noreferrer' }
     ];
 
     return (
@@ -155,14 +154,13 @@ export default function Contact() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Section heading */}
-                <div className="flex flex-col items-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent">Get In Touch</h2>
+                {/* Section heading */}                <div className="flex flex-col items-center mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent">Get In Touch</h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mt-3"></div>
-                    <p className="text-gray-300 text-center max-w-2xl mt-6 text-lg">
-                        Interested in working together? Feel free to reach out through the form below or via social media.
+                    <p className="text-gray-300 text-center max-w-2xl mt-6 text-base md:text-lg px-4">
+                        Interested in working together? Feel free to reach out through email or social media.
                     </p>
-                </div>                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                </div>                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Contact form - temporarily commented out */}
                     {/* <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -258,34 +256,30 @@ export default function Contact() {
                             </p>                            <div className="space-y-4 mb-12">
                                 <div className="flex items-center">
                                     <FaEnvelope className="text-purple-400 w-5 h-5 mr-3" />
-                                    <a
-                                        href="mailto:valiyajay555@gmail.com"
-                                        className="text-gray-300 hover:text-white hover:underline transition-all"
+                                    <button
+                                        className="text-gray-300 hover:text-white hover:underline transition-all bg-transparent border-0 p-0 cursor-pointer"
+                                        onClick={() => {
+                                            navigator.clipboard.writeText("valiyajay555@gmail.com");
+                                            alert("Email copied to clipboard!");
+                                        }}
                                     >
                                         valiyajay555@gmail.com
-                                    </a>
+                                    </button>
                                 </div>
-                            </div>
-
-                            <h4 className="text-xl font-semibold text-white mb-4">Find Me On</h4>                            <div className="flex flex-wrap gap-4">
-                                {socialLinks.map((link, index) => (
+                            </div><h4 className="text-xl font-semibold text-white mb-4">Find Me On</h4>                            <div className="flex flex-wrap gap-4">
+                                {socialLinks.map((link, index) =>
                                     <a
                                         key={index}
                                         href={link.href}
                                         target="_blank"
                                         rel={link.rel || "noopener noreferrer"}
-                                        className="flex items-center justify-center p-3 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-lg border border-white/10 text-white hover:border-purple-500/30 transition-all"
+                                        className="flex items-center justify-center w-12 h-12 md:p-3 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-lg border border-white/10 text-white hover:border-purple-500/30 transition-all"
                                         title={link.name}
-                                        onClick={(e) => {
-                                            if (link.name === 'Email') {
-                                                // Email link opens in the default email client, so no need to open in a new tab
-                                                e.stopPropagation();
-                                            }
-                                        }}
+                                        aria-label={link.name}
                                     >
                                         {link.icon}
                                     </a>
-                                ))}
+                                )}
                             </div>
 
                             <div className="mt-auto pt-12">

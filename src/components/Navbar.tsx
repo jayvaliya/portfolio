@@ -118,13 +118,15 @@ export default function Navbar() {
                             className="text-gray-400 hover:text-white transition-colors"
                             aria-label="LinkedIn"
                         >
-                            <FaLinkedin className="w-5 h-5" />
-                        </a>                        <Link
-                            href="#contact"
-                            className="ml-4 px-4 py-2 border border-purple-500/20 rounded-md bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-white font-medium hover:from-purple-500/20 hover:to-indigo-500/20 transition-all duration-300 shadow-lg hover:shadow-purple-500/10"
-                        >
+                            <FaLinkedin className="w-5 h-5" />                        </a>                        <button
+                                onClick={() => {
+                                    navigator.clipboard.writeText("valiyajay555@gmail.com");
+                                    alert("Email copied to clipboard!");
+                                }}
+                                className="ml-4 px-4 py-2 border border-purple-500/20 rounded-md bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-white font-medium hover:from-purple-500/20 hover:to-indigo-500/20 transition-all duration-300 shadow-lg hover:shadow-purple-500/10 cursor-pointer"
+                            >
                             Let's Talk
-                        </Link>
+                        </button>
                     </div>
 
                     {/* Mobile menu button */}
@@ -214,20 +216,21 @@ export default function Navbar() {
                                 >
                                     <FaLinkedin className="w-6 h-6" />
                                 </a>
-                            </motion.div>
-
-                            <motion.div
+                            </motion.div>                            <motion.div
                                 className="mt-8"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                            >                                <Link
-                                href="#contact"
-                                className="block w-full text-center px-6 py-3 border border-purple-500/20 rounded-md bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-white font-medium hover:from-purple-500/20 hover:to-indigo-500/20 transition-all duration-300"
-                                onClick={closeMenu}
+                            >                                <button
+                                onClick={() => {
+                                    navigator.clipboard.writeText("valiyajay555@gmail.com");
+                                    alert("Email copied to clipboard!");
+                                    closeMenu();
+                                }}
+                                className="block w-full text-center px-6 py-3 border border-purple-500/20 rounded-md bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-white font-medium hover:from-purple-500/20 hover:to-indigo-500/20 transition-all duration-300 cursor-pointer"
                             >
                                     Contact Me
-                                </Link>
+                                </button>
                             </motion.div>
                         </div>
                     </motion.div>

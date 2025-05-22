@@ -16,10 +16,15 @@ export default function Footer() {
         { name: 'Skills', href: '#skills' },
         { name: 'Projects', href: '#projects' },
         { name: 'Contact', href: '#contact' },
-    ];
-
-    const socialLinks = [
-        { name: 'Email', icon: <FaEnvelope />, href: 'mailto:valiyajay555@gmail.com' },
+    ]; const socialLinks = [
+        {
+            name: 'Email',
+            icon: <FaEnvelope />,
+            onClick: () => {
+                navigator.clipboard.writeText("valiyajay555@gmail.com");
+                alert("Email copied to clipboard!");
+            }
+        },
         { name: 'GitHub', icon: <FaGithub />, href: 'https://github.com/jayvaliya' },
         { name: 'LinkedIn', icon: <FaLinkedin />, href: 'https://linkedin.com/in/jay-valiya' },
         { name: 'Twitter', icon: <FaTwitter />, href: 'https://x.com/jayvaliya09' }
@@ -41,20 +46,30 @@ export default function Footer() {
                         <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent mb-4">Jay Valiya</h2>
                         <p className="text-gray-400 mb-6 max-w-md">
                             Building innovative digital solutions that blend creativity with technical excellence. Let's create something amazing together.
-                        </p>
-                        <div className="flex space-x-4">
-                            {socialLinks.map((link, index) => (
-                                <a
-                                    key={index}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                    aria-label={link.name}
-                                >
-                                    {link.icon}
-                                </a>
-                            ))}
+                        </p>                        <div className="flex space-x-4">
+                            {socialLinks.map((link, index) =>
+                                link.onClick ? (
+                                    <button
+                                        key={index}
+                                        onClick={link.onClick}
+                                        className="text-gray-400 hover:text-white transition-colors bg-transparent border-0 p-0 cursor-pointer"
+                                        aria-label={link.name}
+                                    >
+                                        {link.icon}
+                                    </button>
+                                ) : (
+                                    <a
+                                        key={index}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gray-400 hover:text-white transition-colors"
+                                        aria-label={link.name}
+                                    >
+                                        {link.icon}
+                                    </a>
+                                )
+                            )}
                         </div>
                     </div>
 
