@@ -164,7 +164,8 @@ export default function Projects() {
                                         </motion.div>
                                     </div>
                                 </div>
-                            </motion.div>                            {/* Content container */}
+                            </motion.div>
+                            {/* Content container */}
                             <motion.div
                                 className="w-full lg:w-1/2"
                                 initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
@@ -173,7 +174,7 @@ export default function Projects() {
                                 transition={{ duration: 0.6, delay: 0.3 }}
                             >
                                 <motion.h3
-                                    className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-300 mb-3"
+                                    className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-300 mb-3 pb-2"
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ type: "spring", stiffness: 400 }}
                                 >

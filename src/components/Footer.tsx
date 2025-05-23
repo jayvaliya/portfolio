@@ -105,7 +105,7 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} Jay Valiya. All rights reserved.
                     </div>
                     <div className="text-gray-500 text-sm mt-2 md:mt-0">
-                        Made with passion and Next.js
+                        Made with passion and Love 💜
                     </div>
                 </div>
             </div>

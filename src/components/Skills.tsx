@@ -70,7 +70,7 @@ export default function Skills() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Section heading */}
             <div className="flex flex-col items-center mb-20">
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent">My Skills</h2>
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-indigo-400 bg-clip-text text-transparent pb-2">My Skills</h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mt-3"></div>
                 <p className="text-gray-300 text-center max-w-2xl mt-6 text-lg">
                     Technologies I use to bring ideas to life

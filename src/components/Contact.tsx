@@ -160,7 +160,9 @@ export default function Contact() {
                     <p className="text-gray-300 text-center max-w-2xl mt-6 text-base md:text-lg px-4">
                         Interested in working together? Feel free to reach out through email or social media.
                     </p>
-                </div>                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                </div>
+
+                <div className="">
                     {/* Contact form - temporarily commented out */}
                     {/* <motion.div
                         initial={{ opacity: 0, y: 30 }}
