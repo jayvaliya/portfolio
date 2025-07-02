@@ -3,19 +3,20 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaTrophy, FaAward, FaCertificate, FaMedal, FaChevronDown } from 'react-icons/fa';
+import { LuPartyPopper } from 'react-icons/lu';
 
 // Define achievements array
 const achievements = [
     {
-        title: "150+ LeetCode & GeeksforGeeks Problems",
-        description: "Solved over 100 problems on platforms like LeetCode and GeeksforGeeks",
-        icon: <FaTrophy className="w-6 h-6" />,
+        title: "2nd Runner Up in AI-ML Hackathon",
+        description: "Developed MedAudit, an AI-powered EHR System to reduce insurance claim rejections and streamline OPD workflows",
+        icon: <LuPartyPopper className="w-6 h-6" />,
         year: "2025"
     },
     {
-        title: "Freelance Frontend Development",
-        description: "Worked with multiple clients to develop professional product websites",
-        icon: <FaAward className="w-6 h-6" />,
+        title: "150+ LeetCode & GeeksforGeeks Problems",
+        description: "Solved over 100 problems on platforms like LeetCode and GeeksforGeeks",
+        icon: <FaTrophy className="w-6 h-6" />,
         year: "2025"
     },
     {
@@ -29,7 +30,13 @@ const achievements = [
         description: "Built and deployed multiple full-stack projects using modern technologies",
         icon: <FaMedal className="w-6 h-6" />,
         year: "2025"
-    }
+    },
+    {
+        title: "Freelance Frontend Development",
+        description: "Worked with multiple clients to develop professional product websites",
+        icon: <FaAward className="w-6 h-6" />,
+        year: "2025"
+    },
 ];
 
 export default function Achievements() {

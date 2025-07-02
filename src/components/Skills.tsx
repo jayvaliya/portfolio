@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaReact, FaNodeJs, FaMobile, FaDatabase, FaCloud, FaTools } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaMobile, FaDatabase, FaCloud, FaTools, FaDocker } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiExpo, SiRedis } from 'react-icons/si';
 
 export default function Skills() {
@@ -52,9 +52,8 @@ export default function Skills() {
             name: "Cloud & DevOps",
             icon: <FaCloud className="w-8 h-8" />,
             skills: [
-                // { name: "AWS", icon: <SiAmazonaws /> },
                 { name: "CI/CD", icon: <FaTools /> },
-                { name: "Docker", icon: <FaTools /> },
+                { name: "Docker", icon: <FaDocker /> },
             ]
         },
     ];

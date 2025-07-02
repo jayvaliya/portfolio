@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import MouseFollower from "@/components/MouseFollower";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full w-full m-0 p-0 scroll-smooth cursor-none">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased m-0 p-0`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased m-0 p-0`}
         suppressHydrationWarning
       >
         <MouseFollower />

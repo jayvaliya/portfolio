@@ -10,6 +10,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'space-grotesk': ['var(--font-space-grotesk)'],
+        'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        'mono': ['var(--font-jetbrains-mono)', 'monospace'],
       },
       backgroundImage: {
         'gradient-conic':

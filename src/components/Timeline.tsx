@@ -2,7 +2,8 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaGraduationCap, FaBriefcase, FaCode, FaLightbulb } from 'react-icons/fa';
+import { FaGraduationCap, FaCode, FaLightbulb } from 'react-icons/fa';
+import { LuPartyPopper } from 'react-icons/lu';
 
 export default function Timeline() {
     const ref = useRef<HTMLDivElement>(null);
@@ -30,18 +31,25 @@ export default function Timeline() {
             icon: <FaCode className="w-5 h-5" />,
             color: "from-cyan-500 to-cyan-600"
         },
-        {
-            year: "2024",
-            title: "First Internship",
-            description: "Secured a frontend development internship where I worked on React applications and improved my skills in modern JS frameworks.",
-            icon: <FaBriefcase className="w-5 h-5" />,
-            color: "from-indigo-500 to-indigo-600"
-        },
+        // {
+        //     year: "2024",
+        //     title: "First Internship",
+        //     description: "Secured a frontend development internship where I worked on React applications and improved my skills in modern JS frameworks.",
+        //     icon: <FaBriefcase className="w-5 h-5" />,
+        //     color: "from-indigo-500 to-indigo-600"
+        // },
         {
             year: "2025",
             title: "First Major Project",
             description: "Led the development of Noter, a collaborative note-sharing platform that strengthened my project management abilities.",
             icon: <FaLightbulb className="w-5 h-5" />,
+            color: "from-green-500 to-green-600"
+        },
+        {
+            year: "2025",
+            title: "AI-ML Hackathon 2nd runner up",
+            description: "Built MedAudit, an AI-powered EHR System to reduce insurance claim rejections and streamline OPD workflows.",
+            icon: <LuPartyPopper className="w-5 h-5" />,
             color: "from-green-500 to-green-600"
         }
     ];
