@@ -157,7 +157,7 @@ export default function Hero() {
                             Get In Touch
                         </button>
                             <a
-                                href="https://drive.google.com/file/d/1tohATQRygC4wTo-tWq-x_IGtqTEHpb__/view"
+                                href="https://drive.google.com/drive/folders/1GZmh1aRmn_nsY48Kb78cFkIlNk_hbLDF?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-6 py-3 border border-purple-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-lg text-white font-medium hover:bg-white/10 transition-all min-h-[44px] min-w-[120px]"
